@@ -1,0 +1,374 @@
+body {
+  background-color: #1d2327;
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+}
+
+.dc-container {
+  padding: 50px;
+  margin: 0 auto;
+}
+
+.dc-clock {
+  display: flex;
+}
+.dc-clock > *:not(:last-child) {
+  margin-right: 24px;
+}
+
+#dc-clock-title {
+  color: darkslategray;
+  font-family: monospace;
+}
+
+#dc-clock-container {
+  background-color: #101517;
+  border-radius: 16px;
+  border: 16px solid darkslategray;
+  overflow: hidden;
+  padding: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#dc-time-display {
+  color: white;
+}
+
+.dc-separator {
+  position: relative;
+  width: 16px;
+  height: 188px;
+}
+.dc-separator::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  width: 16px;
+  height: 16px;
+  background-color: red;
+}
+.dc-separator::after {
+  content: "";
+  position: absolute;
+  bottom: 25%;
+  width: 16px;
+  height: 16px;
+  background-color: red;
+}
+
+/**
+    DIGITS DISPLAY
+**/
+.dc-digit {
+  height: 188px;
+  width: 100px;
+  position: relative;
+}
+.dc-digit-fragment {
+  background-color: rgb(20, 34, 34);
+  border-color: rgb(20, 34, 34);
+}
+.dc-digit-fragment-1 {
+  height: 16px;
+  position: absolute;
+  top: 0;
+  left: 20px;
+  right: 20px;
+}
+.dc-digit-fragment-1:before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: inherit;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-1:after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: inherit;
+}
+.dc-digit-fragment-2 {
+  height: 60px;
+  width: 16px;
+  position: absolute;
+  top: 20px;
+  left: 0;
+}
+.dc-digit-fragment-2:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: inherit;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-2:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: inherit;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-3 {
+  height: 60px;
+  width: 16px;
+  position: absolute;
+  top: 20px;
+  right: 0;
+}
+.dc-digit-fragment-3:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: inherit;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-3:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: inherit;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-4 {
+  height: 16px;
+  position: absolute;
+  top: 84px;
+  left: 20px;
+  right: 20px;
+}
+.dc-digit-fragment-4:before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: inherit;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-4:after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: inherit;
+}
+.dc-digit-fragment-5 {
+  height: 60px;
+  width: 16px;
+  position: absolute;
+  top: 104px;
+  left: 0;
+}
+.dc-digit-fragment-5:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: inherit;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-5:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: inherit;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-6 {
+  height: 60px;
+  width: 16px;
+  position: absolute;
+  top: 104px;
+  right: 0;
+}
+.dc-digit-fragment-6:before {
+  content: "";
+  position: absolute;
+  top: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: inherit;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-6:after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: inherit;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-7 {
+  height: 16px;
+  position: absolute;
+  bottom: 0;
+  left: 18px;
+  right: 18px;
+}
+.dc-digit-fragment-7:before {
+  content: "";
+  position: absolute;
+  left: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: inherit;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: transparent;
+}
+.dc-digit-fragment-7:after {
+  content: "";
+  position: absolute;
+  right: -16px;
+  border-style: solid;
+  border-width: 8px;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  border-top-color: transparent;
+  border-left-color: inherit;
+}
+
+/* DIGIT 0 */
+.digit-0 .dc-digit-fragment-1,
+.digit-0 .dc-digit-fragment-2,
+.digit-0 .dc-digit-fragment-3,
+.digit-0 .dc-digit-fragment-5,
+.digit-0 .dc-digit-fragment-6,
+.digit-0 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 1 */
+.digit-1 .dc-digit-fragment-3,
+.digit-1 .dc-digit-fragment-6 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 2 */
+.digit-2 .dc-digit-fragment-1,
+.digit-2 .dc-digit-fragment-3,
+.digit-2 .dc-digit-fragment-4,
+.digit-2 .dc-digit-fragment-5,
+.digit-2 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 3 */
+.digit-3 .dc-digit-fragment-1,
+.digit-3 .dc-digit-fragment-3,
+.digit-3 .dc-digit-fragment-4,
+.digit-3 .dc-digit-fragment-6,
+.digit-3 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 4 */
+.digit-4 .dc-digit-fragment-2,
+.digit-4 .dc-digit-fragment-3,
+.digit-4 .dc-digit-fragment-4,
+.digit-4 .dc-digit-fragment-6 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 5 */
+.digit-5 .dc-digit-fragment-1,
+.digit-5 .dc-digit-fragment-2,
+.digit-5 .dc-digit-fragment-4,
+.digit-5 .dc-digit-fragment-6,
+.digit-5 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 6 */
+.digit-6 .dc-digit-fragment-1,
+.digit-6 .dc-digit-fragment-2,
+.digit-6 .dc-digit-fragment-4,
+.digit-6 .dc-digit-fragment-5,
+.digit-6 .dc-digit-fragment-6,
+.digit-6 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 7 */
+.digit-7 .dc-digit-fragment-1,
+.digit-7 .dc-digit-fragment-3,
+.digit-7 .dc-digit-fragment-6 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 8 */
+.digit-8 .dc-digit-fragment-1,
+.digit-8 .dc-digit-fragment-2,
+.digit-8 .dc-digit-fragment-3,
+.digit-8 .dc-digit-fragment-4,
+.digit-8 .dc-digit-fragment-5,
+.digit-8 .dc-digit-fragment-6,
+.digit-8 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
+
+/* DIGIT 9 */
+.digit-9 .dc-digit-fragment-1,
+.digit-9 .dc-digit-fragment-2,
+.digit-9 .dc-digit-fragment-3,
+.digit-9 .dc-digit-fragment-4,
+.digit-9 .dc-digit-fragment-6,
+.digit-9 .dc-digit-fragment-7 {
+  background-color: red;
+  border-color: red;
+}
