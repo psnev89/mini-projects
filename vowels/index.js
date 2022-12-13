@@ -1,10 +1,19 @@
-const domResultContainer = document.getElementById("resultContainer");
-const domTextInput = document.getElementById("textInput");
-const domSubmitButton = document.getElementById("submitButton");
+// cache dom elements
+const domResultContainer = document.getElementById("result-container");
+const domTextInput = document.getElementById("text-input");
+const domSubmitButton = document.getElementById("submit-button");
+const domClearButton = document.getElementById("clear-button");
+
 const vowelsRegex = /[aeiou]/gi;
 
 const getVowelsCount = (text = "") => {
-  return `${text}`.match(vowelsRegex)?.length ?? 0;
+  const normalized = `${text}`.normalize("NFD"); // to account for accented vowels (á, à, é, etc...)
+  return normalized.match(vowelsRegex)?.length ?? 0;
+};
+
+const reset = () => {
+  domResultContainer.innerText = "";
+  domTextInput.value = "";
 };
 
 const init = () => {
@@ -16,3 +25,4 @@ const init = () => {
 };
 
 domSubmitButton.onclick = init;
+domClearButton.onclick = reset;

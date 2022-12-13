@@ -5,13 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vowels</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./index.css" />
   </head>
   <body>
-    <h1>Vowels</h1>
-    <textarea id="textInput" placeholder="Type text to count vowels"></textarea>
-    <button id="submitButton" type="button">Count</button>
-    <div id="resultContainer"></div>
+    <article id="vc-container">
+      <div id="vc-container-header">
+        <h1>Vowels Counter</h1>
+      </div>
+      <div id="vc-container-content" class="row">
+        <div id="vc-form-content" class="col">
+          <textarea
+            id="text-input"
+            rows="10"
+            placeholder="Type text to count vowels"
+          ></textarea>
+          <div class="vc-actions-container">
+            <button id="clear-button" type="button">Clear</button>
+            <button id="submit-button" type="button">Count</button>
+          </div>
+        </div>
+        <div id="vc-result-content" class="col">
+          <div id="result-container"></div>
+        </div>
+      </div>
+    </article>
+
     <script src="./index.js"></script>
   </body>
 </html>
